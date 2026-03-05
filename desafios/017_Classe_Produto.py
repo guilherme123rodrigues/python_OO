@@ -3,6 +3,7 @@ from rich.panel import Panel
 
 console = Console()
 
+#Entidade da classe
 class Produto():
     #Atributos da classe
     def __init__(self, nome, preço='⛔ Preço não informado'):

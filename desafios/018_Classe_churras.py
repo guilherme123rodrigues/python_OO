@@ -4,7 +4,7 @@ from rich.panel import Panel
 #Posso usar os recursos que tem o biblioteca "rich"
 console = Console()
 
-#criação da classe
+#Entidade da classe
 class Churras():
     '''
     
@@ -25,7 +25,7 @@ class Churras():
         preço = 82.40
         t_carne = self.quantidade * kg
 
-        #Fiz um condição, se a quantidade de pessoa for == 1 pego o resto de t_carne / 1000 que vai ser 500
+        #Fiz um condição, se a quantidade de pessoa for == 1 pego o resto de t_carne % 1000 que vai ser 500
         #senão, faço a divissão normal.
         k_p = str(t_carne % 1000) + 'g' if self.quantidade == 1 else str(t_carne / 1000) + ' kg'
         tot_pagar = (t_carne * preço) / 1000

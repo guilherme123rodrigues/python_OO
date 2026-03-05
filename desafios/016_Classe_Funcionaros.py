@@ -3,7 +3,7 @@ from rich.panel import Panel
 
 console = Console()
 
-#Classe orientado objeto
+#Entidade da classe
 class Funcionario():
     #Atributo da classe
     def __init__(self, nome, setor, cargo, salario=0):

@@ -4,7 +4,7 @@ from time import sleep
 
 console = Console()
 
-#Inicializaçao da classe
+#Entidade da classe
 class Gamer():
     def __init__(self, nome, nick, *favoritos):
         #Entidades d classe
