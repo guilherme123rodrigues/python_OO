@@ -16,25 +16,34 @@ class Livro():
         p2 = 0 
         p3 = 0
         while True:
-            p = int(input('Quantas páginas irá passar? '))
-            p1 = p + p2
-            for c in range(p3+1, p1+1):
-                if c <= self.paginas:
-                    print(f'▶▶ Página {c}', end = ' ')
-                    p2 += 1
-                    if c == self.paginas:
+            while True:
+                try:
+                    p = int(input('Quantas páginas irá passar? '))
+                except (TypeError, ValueError):
+                    console.print('[bold red]Valor inválido![/]')
+                else:
+                    break
+            if p < 0:
+                console.print('Não aceito valor negativo, apenas valores inteiros. [bold red]Tente novamente![/]')
+            else:
+                p1 = p + p2
+                for c in range(p3+1, p1+1):
+                    if c <= self.paginas:
+                        print(f'▶▶ Página {c}', end = ' ')
+                        p2 += 1
+                        if c == self.paginas:
+                            console.print('')
+                            console.print(Panel(f'[bold italic red]Você chegou na página final do livro[/] [bold italic green]"{self.autor}"[/]'), width=55)
+                            t = True
+                            break
+                    else:
                         console.print('')
-                        console.print(Panel(f'[bold italic red]Você chegou na página final do livro[/] [bold italic green]"{self.autor}"[/]'), width=55)
+                        console.print(Panel(f'[bold italic red]Você já atingiu o limite de págia do livro[/] [bold italic green]"{self.autor}"[/]'), width=55)
                         t = True
                         break
-                else:
-                    console.print('')
-                    console.print(Panel(f'[bold italic red]Você já atingiu o limite de págia do livro[/] [bold italic green]"{self.autor}"[/]'), width=55)
-                    t = True
-                    break
+                p3 += p
             if t == True:
                 break
-            p3 += p
             print('\n')
 
 
