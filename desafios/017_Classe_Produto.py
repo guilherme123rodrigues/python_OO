@@ -6,26 +6,22 @@ console = Console()
 #Entidade da classe
 class Produto():
     #Atributos da classe
-    def __init__(self, nome, preço='⛔ Preço não informado'):
+    def __init__(self, nome, preço):
         self.nome = nome
         self.preço = preço
 
     #Metodo da classe
     def etiqueta(self):
-        console.print(
-            Panel(
-                f'[bold italic]Nome:[/] [bold italic yellow]{self.nome}[/]\n'
-                f'{'-'*20}\n'
-                f'[bold italic]Preço:[/] [bold italic green]R${self.preço}[/]',
-                title='[bold italic]Etiqueta[/]'
-                ),
-                width=30
-            )
+        conteudo = f"{self.nome:^25}"
+        conteudo += f"{'-'*25}\n"
+        precof = f"R${self.preço:,.2f}"
+        conteudo += f"{precof:.^25}"
+        console.print(Panel(f'{conteudo}', title='[bold italic]Etiqueta[/]'), width=30)
         
 #Criação do objeto 01
-p1 = Produto('Arroz', 14.90)
+p1 = Produto('PlayStaytion5', 5_122.90)
 p1.etiqueta()
 
 #Criação do objeto 02
-p2 = Produto('Perá')
+p2 = Produto('Perá', 2_00)
 p2.etiqueta()
