@@ -15,10 +15,11 @@ class Produto():
         console.print(
             Panel(
                 f'[bold italic]Nome:[/] [bold italic yellow]{self.nome}[/]\n'
+                f'{'-'*20}\n'
                 f'[bold italic]Preço:[/] [bold italic green]R${self.preço}[/]',
                 title='[bold italic]Etiqueta[/]'
                 ),
-                width=50
+                width=30
             )
         
 #Criação do objeto 01
